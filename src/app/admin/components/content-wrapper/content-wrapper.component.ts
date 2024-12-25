@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../pages/auth/auth.service';
 import { ComponentsWithoutFormsModule } from '../../../components/components-without-forms.module';
 import { RouterOutlet } from '@angular/router';
 
