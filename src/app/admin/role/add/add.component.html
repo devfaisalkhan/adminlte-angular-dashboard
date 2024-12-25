@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <h2>{{ isEdit ? 'Update Role' : 'Add Role' }}</h2>
+    <form [formGroup]="formGroup" (ngSubmit)="saveRole(formGroup.value)">
+      <div class="mb-3">
+        <label for="name" class="form-label">Role Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+          [ngClass]="{ 'is-invalid': formGroup.get('name')?.invalid && formGroup.get('name')?.touched }"
+        />
+        <div class="invalid-feedback" *ngIf="formGroup.get('name')?.invalid && formGroup.get('name')?.touched">
+          Role Name is required.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          id="description"
+          class="form-control"
+          formControlName="description"
+          [ngClass]="{ 'is-invalid': formGroup.get('description')?.invalid && formGroup.get('description')?.touched }"
+        ></textarea>
+        <div class="invalid-feedback" *ngIf="formGroup.get('description')?.invalid && formGroup.get('description')?.touched">
+          Description is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="permissions" class="form-label">Permissions</label>
+        <select class="select2" id="permissions" multiple="true" style="width: 100%;">
+          <option *ngFor="let permission of permissions" [value]="permission">{{ permission }}</option>
+        </select>
+
+        <input type="hidden" formControlName="permissions" />  
+      </div>
+      
+      <button type="submit" class="btn btn-success" [disabled]="">{{ isEdit ? 'Update' : 'Save' }}</button>
+      <a routerLink="/roles" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>

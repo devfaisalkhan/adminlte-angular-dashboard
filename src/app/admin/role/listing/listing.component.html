@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h2>Roles Listing</h2>
+    <a [routerLink]="['/admin/add-roles']" class="btn btn-primary mb-3">Add Role</a>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Permissions</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let role of roles">
+          <td>{{ role.name }}</td>
+          <td>{{ role.description }}</td>
+           <td>
+            <span class="badge badge-light permissions" *ngFor="let permission of role.permissions">{{ permission }}</span>
+          <td>
+            <a [routerLink]="['/admin/add-roles', role.id]" class="btn btn-warning btn-sm">Edit</a>
+            <button class="btn btn-danger btn-sm" >Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

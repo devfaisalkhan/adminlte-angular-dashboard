@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">
+
+        Add course
+    </h2>
+    <form [formGroup]="formGroup" (ngSubmit)="onFormSubmitted(formGroup.value)">
+      <div class="mb-3">
+        <label for="username" class="form-label">Title</label>
+        <input formControlName="title" type="text" class="form-control" id="name" placeholder="Enter Name" required>
+      </div>
+    
+      <div class="mb-3">
+        <label for="role" class="form-label">Teacher</label>
+      
+        <select formControlName="roles" class="form-select" id="role" required>
+            <option value="">Select Teacher</option>
+            @for (user of users; track user; let index = $index) {
+                <option value="">{{user.name}}</option>
+              }
+
+        </select>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="terms" [required]="!isUpdate">
+        <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+  

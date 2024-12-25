@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="col-auto button justify-content-end">
+      <button class="btn btn-primary" [routerLink]="['/admin/add-user']">Add User</button>
+    </div>
+    <table class="table table-hover table-bordered table-loader table-sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Roles</th>
+          <th scope="col">Permissions</th>
+          <th scope="col">action buttons</th>
+
+        </tr>
+  
+      </thead>
+      @if (users) {
+        <tbody>
+          @for (user of users; track user; let index = $index) {
+            <tr>
+              <th scope="row"> {{ index+1 }} </th>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                @for (role of user.roles; track $index) {
+                  <span class="badge badge-light" style="margin: 0 4px;">
+                    {{role.name }}
+                  </span>
+                }
+
+                  
+                <!-- @if (user.isEditingEnabled) {
+                  <select  class="form-select" (change)="onRoleChanged(user, $event)">
+                    @for (role of user.roles; track role) {
+                      <option  [value]="role.role" >{{ role.role }}</option>
+                    }
+                  </select>
+                } -->
+              </td>
+              <td>
+                @for (item of permissions; track $index) {
+                  <span class="badge badge-light permissions">
+                      {{item }}
+                  </span>
+                }
+              </td>
+              <!-- <td> -->
+                <!-- {{user.status}} -->
+                <!-- @if (user.isEditingEnabled) {
+                  <select [(ngModel)]="user.status" class="form-select" (change)="onStatusChanged(user, $event)">
+                    <option  [value]="userStatus.APPROVED">{{ userStatus.APPROVED }}</option>
+                    <option  [value]="userStatus.PENDING">{{ userStatus.PENDING }}</option>
+                  </select>
+                } -->
+              <!-- </td> -->
+              <td>
+                <!-- Action Buttons -->
+                <button class="btn btn-warning btn-sm me-2" (click)="onUpdateUser()">
+                  <i class="fas fa-edit"></i> Update
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="onDeleteUser(user)">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      }
+      @if (!users) {
+        <tbody>
+          <tr scope="row">
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+          </tr>
+          <tr scope="row">
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+          </tr>
+          <tr scope="row">
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+            <td colspan="1" class="skeleton-cell"></td>
+          </tr>
+        </tbody>
+      }
+    </table>
+  </div>
+  
+  
