@@ -9,9 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainFooterComponent implements OnInit {
   date!: string;
-
   ngOnInit(): void {
     this.date = new Date().getFullYear().toString();
   }
-
 }

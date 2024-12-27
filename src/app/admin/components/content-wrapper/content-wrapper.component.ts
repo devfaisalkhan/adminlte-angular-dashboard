@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-content-wrapper',
   standalone: true,
-  imports: [ComponentsWithoutFormsModule, RouterOutlet],
+  imports: [RouterOutlet],
   templateUrl: './content-wrapper.component.html',
   styleUrl: './content-wrapper.component.scss'
 })
