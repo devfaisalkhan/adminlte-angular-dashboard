@@ -1,27 +1,61 @@
-# AdminlteAngularDashboard
+# AdminLTE - Angular Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+This project integrates the powerful **AdminLTE template** with the flexibility of **Angular**, creating a dynamic and modern admin dashboard for web applications.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- **AdminLTE Version:** 3.2.0
+- **Angular Version:** Latest Stable Version
+- **Responsive Design**: Fully compatible with mobile, tablet, and desktop screens.
+- **Customizable Components**: Modular architecture for easy customization.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Live Demo
+Explore the live demo:
+[Online Demo](https://devfaisalkhan.github.io/adminlte-angular-dashboard/admin/dashboard)
 
-## Build
+You can register and log in to test all authentication-related features, fully functional and live!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Development Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Step 1: Install Dependencies
+Run the following command to install project dependencies:
 
-## Running end-to-end tests
+```bash
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Step 2: Start Firebase Services
+Start the Firebase services locally in a separate terminal:
 
-## Further help
+```bash
+npm run firebase:start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Keep this terminal running while you develop the application.
+
+### Step 3: Start Development Server
+Run the development server to preview the application:
+
+```bash
+npm run serve
+```
+
+The application will be available at:
+[http://localhost:4200](http://localhost:4200)
+
+### Step 4: Deploy to GitHub Pages
+If you want to upload the project to GitHub Pages, run the following command:
+
+```bash
+npm run deploy:gh
+```
+
+
+## Credits
+- Original AdminLTE Template: [AdminLTE](https://adminlte.io/)
+- Angular Framework: [Angular](https://angular.io/)
