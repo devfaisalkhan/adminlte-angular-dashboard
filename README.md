@@ -16,7 +16,6 @@ This project integrates the powerful **AdminLTE template** with the flexibility 
 Explore the live demo:
 [Online Demo](https://devfaisalkhan.github.io/adminlte-angular-dashboard/admin/dashboard)
 
-You can register and log in to test all authentication-related features, fully functional and live!
 
 ---
 
@@ -29,20 +28,13 @@ Run the following command to install project dependencies:
 npm install
 ```
 
-### Step 2: Start Firebase Services
-Start the Firebase services locally in a separate terminal:
 
-```bash
-npm run firebase:start
-```
-
-Keep this terminal running while you develop the application.
 
 ### Step 3: Start Development Server
 Run the development server to preview the application:
 
 ```bash
-npm run serve
+npm run start
 ```
 
 The application will be available at:
